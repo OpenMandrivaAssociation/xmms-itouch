@@ -1,6 +1,6 @@
 Name:		xmms-itouch
 Version:	0.1.2
-Release:	%mkrel 5
+Release:	%mkrel 6
 Epoch:		0
 Summary:	XMMS iTouch keyboard control plugin
 License:	GPL
@@ -8,8 +8,8 @@ Group:		Sound
 URL:		http://www.saunalahti.fi/~syrjala/xmms-itouch/
 Source0:	http://www.saunalahti.fi/~syrjala/xmms-itouch/%{name}-%{version}.tar.bz2
 Source1:	http://www.saunalahti.fi/~syrjala/xmms-itouch/%{name}.config
-Requires:	xmms >= 0:1.2.0
-BuildRequires:	xmms-devel >= 0:1.2.0
+Requires:	xmms
+BuildRequires:	xmms-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-release-root
 
 %description
@@ -21,24 +21,22 @@ keyboard.
 	
 %prep
 %setup -q
-%{__install} -m 644 %{SOURCE1} %{name}.config
+%{__cp} -a %{SOURCE1} %{name}.config
 
 %build
-%define libdir	%(eval "%{_bindir}/xmms-config --general-plugin-dir")
-%define datadir	%(eval "%{_bindir}/xmms-config --data-dir")
-
 %{configure2_5x}
 %{make}
 
 %install
 %{__rm} -rf %{buildroot}
 %{makeinstall_std}
+%{__rm} %{buildroot}%{_libdir}/xmms/General/libitouch.la
 
 %clean
 %{__rm} -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
+%defattr(0644,root,root,0755)
 %doc AUTHORS COPYING ChangeLog INSTALL README
-%{libdir}/*
-%{datadir}/xmms-itouch.config
+%{_datadir}/xmms/xmms-itouch.config
+%attr(0755,root,root) %{_libdir}/xmms/General/libitouch.so
