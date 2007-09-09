@@ -1,6 +1,3 @@
-%define libdir	%(eval "%{_bindir}/xmms-config --general-plugin-dir")
-%define datadir	%(eval "%{_bindir}/xmms-config --data-dir")
-
 Name:		xmms-itouch
 Version:	0.1.2
 Release:	%mkrel 5
@@ -27,6 +24,9 @@ keyboard.
 %{__install} -m 644 %{SOURCE1} %{name}.config
 
 %build
+%define libdir	%(eval "%{_bindir}/xmms-config --general-plugin-dir")
+%define datadir	%(eval "%{_bindir}/xmms-config --data-dir")
+
 %{configure2_5x}
 %{make}
 
