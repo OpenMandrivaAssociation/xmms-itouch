@@ -1,6 +1,6 @@
 Name:		xmms-itouch
 Version:	0.1.2
-Release:	%mkrel 6
+Release:	%mkrel 7
 Epoch:		0
 Summary:	XMMS iTouch keyboard control plugin
 License:	GPL
