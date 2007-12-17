@@ -10,7 +10,6 @@ Source0:	http://www.saunalahti.fi/~syrjala/xmms-itouch/%{name}-%{version}.tar.bz
 Source1:	http://www.saunalahti.fi/~syrjala/xmms-itouch/%{name}.config
 Requires:	xmms
 BuildRequires:	xmms-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-release-root
 
 %description
 With this XMMS plugin you can take advantage of the multimedia (playback and
