@@ -5,7 +5,7 @@ Epoch:		0
 Summary:	XMMS iTouch keyboard control plugin
 License:	GPL
 Group:		Sound
-URL:		http://www.saunalahti.fi/~syrjala/xmms-itouch/
+URL:		https://www.saunalahti.fi/~syrjala/xmms-itouch/
 Source0:	http://www.saunalahti.fi/~syrjala/xmms-itouch/%{name}-%{version}.tar.bz2
 Source1:	http://www.saunalahti.fi/~syrjala/xmms-itouch/%{name}.config
 Requires:	xmms
