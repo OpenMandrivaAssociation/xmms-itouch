@@ -9,6 +9,7 @@ URL:		https://www.saunalahti.fi/~syrjala/xmms-itouch/
 Source0:	http://www.saunalahti.fi/~syrjala/xmms-itouch/%{name}-%{version}.tar.bz2
 Source1:	http://www.saunalahti.fi/~syrjala/xmms-itouch/%{name}.config
 Requires:	xmms
+BuildRequires:	make
 BuildRequires:	xmms-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-release-root
 
